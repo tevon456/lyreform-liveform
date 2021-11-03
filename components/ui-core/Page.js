@@ -80,19 +80,11 @@ function Page({ background, ...props }) {
     }
   `;
 
-  if (window.top === window.self) {
-    return (
-      <Content id="page" className={props.className} {...props}>
-        {props.children}
-      </Content>
-    );
-  } else {
-    return (
-      <Content id="page" className={props.className} {...props}>
-        {props.children}
-      </Content>
-    );
-  }
+  return (
+    <Content id="page" className={props.className} {...props}>
+      {props.children}
+    </Content>
+  );
 }
 
 export default Page;

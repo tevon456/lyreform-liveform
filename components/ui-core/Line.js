@@ -2,7 +2,7 @@ import React from "react";
 import Box from "./Box";
 
 /**
- * Draw a horizaontal or vertical line.
+ * Draw a horizontal or vertical line.
  * @prop {string} variant - h for horizontal and v for vertical.
  * @prop {string} thickness - Specified in css units.
  * @prop {string} length - Specified in css units.

@@ -7,7 +7,7 @@ const StyledFormHeader = styled.div`
   border-radius: 4px 4px 0px 0px;
   padding: 1em;
   z-index: 2;
-  height: 60px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -44,7 +44,7 @@ function FormHeader({
           alt="organization's logo"
         />
       ) : null}
-      <UICore.Text as="h3" size="lg" weight={700} color={header_foreground}>
+      <UICore.Text as="h3" size="lg" weight={500} color={header_foreground}>
         {name}
       </UICore.Text>
     </StyledFormHeader>

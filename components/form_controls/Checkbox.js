@@ -87,7 +87,7 @@ function Checkbox(props) {
       top: 10%;
       width: 0.3em;
       height: 0.5em;
-      border: solid ${props.checkColor || "white"};
+      border: solid ${props.checkcolor || "white"};
       border-width: 0 0.15em 0.15em 0;
       transform: rotate(45deg);
     }

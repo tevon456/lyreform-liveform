@@ -21,7 +21,7 @@ const RenderFields = (field, controls_background, controls_foreground) => {
         <FormControls.CheckboxGroup
           {...field}
           baseColor={controls_background}
-          checkColor={controls_foreground}
+          checkcolor={controls_foreground}
         />
       );
     case "RADIO_GROUP":
@@ -29,7 +29,7 @@ const RenderFields = (field, controls_background, controls_foreground) => {
         <FormControls.RadioGroup
           {...field}
           baseColor={controls_background}
-          checkColor={controls_foreground}
+          checkcolor={controls_foreground}
         />
       );
     case "DATE":

@@ -87,7 +87,7 @@ const StyledRadio = styled.label`
     top: 24%;
     width: 0.5em;
     height: 0.5em;
-    background: ${(props) => props.checkColor || "white"};
+    background: ${(props) => props.checkcolor || "white"};
     border-radius: 50%;
   }
 `;

@@ -10,7 +10,7 @@ export default function Preview() {
     window?.addEventListener(
       "message",
       (event) => {
-        if (allowedOrigins.includes(even.origin)) {
+        if (!allowedOrigins.includes(even.origin)) {
           console.log("no");
           return;
         }

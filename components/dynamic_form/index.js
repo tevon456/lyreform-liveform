@@ -9,7 +9,6 @@ export default function DynamicForm({ ...props }) {
   const [applyBackground] = useBackground();
   let {
     name,
-    published,
     logo_url,
     header_foreground,
     header_background,
@@ -18,8 +17,10 @@ export default function DynamicForm({ ...props }) {
     controls_foreground,
     controls_background,
     page_background,
-    fields,
   } = props.data;
+
+  let fields = props?.data?.fields || [];
+
   useEffect(() => {
     applyBackground(page_background || "#F7F6F2");
   }, []);

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { UICore } from "../";
+import Image from "next/image";
 import SignatureCanvas from "react-signature-canvas";
 import Label from "../form_controls/Label";
 import styled from "styled-components";
@@ -22,7 +23,7 @@ function Signature(props) {
         {props.required ? " *" : null}
       </Label>
       <UICore.Flex justify="flex-start" direction="column">
-        <img src={url} alt="" width="300px" height={url ? "200px" : "0px"} />
+        <Image src={url} alt="" width="300px" height={url ? "200px" : "0px"} />
         <UICore.Button
           type="button"
           background={props.baseColor}
@@ -116,21 +117,7 @@ function SignaturePad(props) {
   return (
     <div className="margin-bottom--xl">
       <Label small={props.small}>
-        {props.label || "signature"}{" "}
-        {props.required ? (
-          <>
-            <UICore.Space amount="2" />
-            <UICore.Badge
-              background="var(--dark-grey)"
-              color="#fff"
-              aria-label="required"
-              data-balloon-pos="right"
-              size="xs"
-            >
-              R
-            </UICore.Badge>
-          </>
-        ) : null}
+        {props.label || "signature"} {props.required ? " *" : null}
       </Label>
       <CanvasWrapper maxWidth="400px">
         <SignatureCanvas

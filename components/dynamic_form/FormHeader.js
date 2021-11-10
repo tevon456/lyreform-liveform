@@ -1,15 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import styled from "styled-components/macro";
 import { UICore } from "..";
 
 const StyledFormHeader = styled.div`
-  border-radius: 4px 4px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
   padding: 1em;
   z-index: 2;
-  height: 90px;
+  min-height: 70px;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-around;
 `;
 
@@ -44,7 +45,13 @@ function FormHeader({
           alt="organization's logo"
         />
       ) : null}
-      <UICore.Text as="h3" size="lg" weight={500} color={header_foreground}>
+      <UICore.Text
+        as="h1"
+        size="md"
+        mt="var(--space-md)"
+        weight={500}
+        color={header_foreground}
+      >
         {name}
       </UICore.Text>
     </StyledFormHeader>

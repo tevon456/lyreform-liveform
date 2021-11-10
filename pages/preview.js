@@ -14,7 +14,7 @@ export default function Preview() {
           console.log("no");
           return;
         }
-        console.log(event.data);
+        console.log(":", event.data);
         localStorage.setItem("previewData", event.data);
       },
       false

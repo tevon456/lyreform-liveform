@@ -53,7 +53,9 @@ const SelectInput = ({ disabled, ...props }) => {
           select...
         </option>
         {props.options.map((o) => (
-          <option value={o.value}>{o.value}</option>
+          <option key={o.value} value={o.value}>
+            {o.value}
+          </option>
         ))}
       </StyledSelect>
     </Label>

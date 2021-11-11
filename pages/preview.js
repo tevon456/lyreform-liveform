@@ -13,6 +13,7 @@ export default function Preview() {
         if (!allowedOrigins.includes(event.origin)) {
           return;
         }
+        console.log("event received");
         localStorage.setItem("previewData", event.data);
       },
       false

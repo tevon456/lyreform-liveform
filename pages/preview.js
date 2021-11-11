@@ -10,11 +10,9 @@ export default function Preview() {
     window?.addEventListener(
       "message",
       (event) => {
-        if (!allowedOrigins.includes(even.origin)) {
-          console.log("no");
+        if (!allowedOrigins.includes(event.origin)) {
           return;
         }
-        console.log(":", event.data);
         localStorage.setItem("previewData", event.data);
       },
       false

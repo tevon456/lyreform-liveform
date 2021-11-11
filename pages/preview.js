@@ -13,7 +13,6 @@ export default function Preview() {
         if (!allowedOrigins.includes(event.origin)) {
           return;
         }
-        console.log("event received");
         localStorage.setItem("previewData", event.data);
       },
       false
@@ -32,12 +31,18 @@ export default function Preview() {
         <meta name="description" content="form created using Lyreform" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Content.Card width="300">
-        <UICore.Text color="var(--warning)" weight="500">
-          Note
-        </UICore.Text>
-        <UICore.Text>This is a preview version of your form.</UICore.Text>
-      </Content.Card>
+      <UICore.Flex justify="center">
+        <Content.Card width="800px" pd="10px" mb="40px">
+          <UICore.Text mb="4px" mt="2px" color="var(--warning)" weight="500">
+            Note
+          </UICore.Text>
+          <UICore.Text mb="2px" mt="2px" size="sm">
+            This is a preview version of your form. If you have issues with
+            preview updates try closing this tab and clicking preview again from
+            the builder toolbar.
+          </UICore.Text>
+        </Content.Card>
+      </UICore.Flex>
       <UICore.Flex justify="center">
         {JSON.parse(previewSchema) ? (
           <DynamicForm data={JSON.parse(previewSchema)} />

@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "api": "cd ../lyreform-api-postgres/ && npm run dev"
   },
   "dependencies": {
     "chroma-js": "^2.1.2",

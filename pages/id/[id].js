@@ -17,11 +17,11 @@ const fetcher = async (url) => {
 export default function Form() {
   const { query } = useRouter();
   const { data, error } = useSWR(
-    () => query.id && `/v1/form/${query.id}`,
+    () => query.id && `https://api.lyreform.com/v1/form/${query.id}`,
     fetcher
   );
 
-  console.log(query);
+  console.log(data, error, query);
 
   if (error) return <div>{error.message}</div>;
   if (!data) return <div>Loading...</div>;

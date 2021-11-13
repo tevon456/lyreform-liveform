@@ -1,6 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
+/**
+ * Used as parent for Page Components.
+ * @prop {string} className: css class
+ */
+function Page({ children, className, background, ...rest }) {
+  return (
+    <Main id="page" className={className} {...rest}>
+      {children}
+    </Main>
+  );
+}
+
 const size = {
   mobileS: "320px",
   mobileM: "375px",
@@ -24,7 +36,7 @@ const device = {
   desktopL: `(max-width: ${size.desktop})`,
 };
 
-const Content = styled.main`
+const Main = styled.main`
   padding-bottom: var(--space-md);
 
   @media ${device.desktopL} {
@@ -62,17 +74,5 @@ const Content = styled.main`
     padding-right: var(--space-sm);
   }
 `;
-
-/**
- * Used as parent for Page Components.
- * @prop {string} className: css class
- */
-function Page({ children, className, background, ...rest }) {
-  return (
-    <Content id="page" className={className} {...rest}>
-      {children}
-    </Content>
-  );
-}
 
 export default Page;

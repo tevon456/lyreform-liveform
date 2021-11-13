@@ -137,32 +137,30 @@ function SignaturePad(props) {
           justify="flex-end"
           align="center"
         >
-          <UICore.ButtonGroup>
-            <UICore.Button
-              kind="tertiary"
-              type="button"
-              onClick={() => {
-                sigPad.clear();
-                props.el.current.value = null;
-                props.img(null);
-              }}
-            >
-              Clear
-            </UICore.Button>
+          <UICore.Button
+            kind="tertiary"
+            type="button"
+            onClick={() => {
+              sigPad.clear();
+              props.el.current.value = null;
+              props.img(null);
+            }}
+          >
+            Clear
+          </UICore.Button>
 
-            <UICore.Button
-              type="button"
-              background={props.baseColor}
-              color={props.checkColor}
-              onClick={() => {
-                props.el.current.value = sigPad.toDataURL();
-                props.img(sigPad.toDataURL());
-                props.close();
-              }}
-            >
-              Accept and sign
-            </UICore.Button>
-          </UICore.ButtonGroup>
+          <UICore.Button
+            type="button"
+            background={props.baseColor}
+            color={props.checkColor}
+            onClick={() => {
+              props.el.current.value = sigPad.toDataURL();
+              props.img(sigPad.toDataURL());
+              props.close();
+            }}
+          >
+            Accept and sign
+          </UICore.Button>
         </UICore.Flex>
       </CanvasWrapper>
       {/* <UICore.Flex>

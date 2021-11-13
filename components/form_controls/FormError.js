@@ -1,10 +1,11 @@
 import React from "react";
-import { Core } from "..";
-const FormError = props => {
-  return props.errors && props.touched ? (
-    <Core.Text size="sm" color="var(--red)" style={props.style}>
-      {props.errors}
-    </Core.Text>
+import { UICore } from "..";
+
+const FormError = ({ errors, touched, style }) => {
+  return errors && touched ? (
+    <UICore.Text size="sm" color="var(--red)" style={style}>
+      {errors}
+    </UICore.Text>
   ) : null;
 };
 

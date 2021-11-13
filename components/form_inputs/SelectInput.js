@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { globals } from "./globals";
 import { Label } from "../form_controls";
-import { Core, Layout } from "..";
+import { UICore } from "..";
 
 const StyledSelect = styled.select`
   display: block;
@@ -32,8 +32,8 @@ const SelectInput = ({ disabled, ...props }) => {
       {props.label || "select dropdown"}
       {props.required ? (
         <>
-          <Layout.Space amount="2" />
-          <Core.Badge
+          <UICore.Space amount="2" />
+          <UICore.Badge
             background="var(--dark-grey)"
             color="#fff"
             aria-label="required"
@@ -41,7 +41,7 @@ const SelectInput = ({ disabled, ...props }) => {
             size="xs"
           >
             R
-          </Core.Badge>
+          </UICore.Badge>
         </>
       ) : null}
       <StyledSelect

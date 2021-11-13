@@ -1,7 +1,8 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import useSWR from "swr";
 import { UICore } from "../../components";
+import Logo from "../../icons/logo";
 // import DynamicForm from "../../components/dynamic_form";
 
 const fetcher = async (url) => {
@@ -23,8 +24,34 @@ export default function Form() {
 
   console.log(data, error, query);
 
-  if (error) return <div>{error.message}</div>;
-  if (!data) return <div>Loading...</div>;
+  if (error)
+    return (
+      <UICore.Page>
+        <UICore.Flex justify="center" align="center">
+          <Content.Card width="300px">
+            <UICore.Flex justify="center" align="center">
+              <Logo width="30px" height="30px" />
+            </UICore.Flex>
+            <UICore.Text align="center">{error.message}</UICore.Text>
+            <UICore.Text
+              onClick={() => router.reload()}
+              align="center"
+              color="var(--primary)"
+            >
+              Try Reloading
+            </UICore.Text>
+          </Content.Card>
+        </UICore.Flex>
+      </UICore.Page>
+    );
+  if (!data)
+    return (
+      <UICore.Page>
+        <UICore.Flex justify="center" align="center">
+          <div>Loading...</div>
+        </UICore.Flex>
+      </UICore.Page>
+    );
 
   return (
     <UICore.Page>

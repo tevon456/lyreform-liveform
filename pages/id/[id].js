@@ -33,13 +33,16 @@ export default function Form() {
               <Logo width="30px" height="30px" />
             </UICore.Flex>
             <UICore.Text align="center">{error.message}</UICore.Text>
-            <UICore.Text
-              onClick={() => router.reload()}
-              align="center"
-              color="var(--primary)"
-            >
-              Try Reloading
-            </UICore.Text>
+            <UICore.Flex justify="center" align="center">
+              <UICore.Button
+                kind="secondary"
+                onClick={() => router.reload()}
+                align="center"
+                color="var(--neutral-100)"
+              >
+                Try Reloading
+              </UICore.Button>
+            </UICore.Flex>
           </Content.Card>
         </UICore.Flex>
       </UICore.Page>

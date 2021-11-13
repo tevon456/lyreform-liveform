@@ -17,7 +17,7 @@ export default function Preview() {
       },
       false
     );
-  }, []);
+  }, [allowedOrigins]);
 
   if (typeof window !== "undefined") {
     previewSchema = localStorage.getItem("previewData");

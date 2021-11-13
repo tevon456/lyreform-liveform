@@ -23,6 +23,7 @@ export default function DynamicForm({ ...props }) {
 
   useEffect(() => {
     applyBackground(page_background || "#F7F6F2");
+    // eslint-disable-next-line
   }, []);
 
   return (

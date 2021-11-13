@@ -18,17 +18,18 @@ function FormFooter({ body_background }) {
       `}
     >
       <UICore.Flex justify="center" align="center">
-        <UICore.Text
-          size="sm"
-          className="margin-top--md"
-          color={
-            chroma(body_background).luminance() > 0.35 ? "#343a40" : "#fff"
-          }
-        >
-          powered by Lyreform
-        </UICore.Text>
-        <UICore.Space amount={1} />
-        <Link href="/">
+        <Link href="/" passHref>
+          <UICore.Text
+            size="sm"
+            className="margin-top--md"
+            color={
+              chroma(body_background).luminance() > 0.35 ? "#343a40" : "#fff"
+            }
+          >
+            powered by Lyreform
+          </UICore.Text>
+          <UICore.Space amount={1} />
+
           <Logo
             width="22px"
             height="22px"

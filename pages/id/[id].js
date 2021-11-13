@@ -1,7 +1,7 @@
 import Head from "next/head";
 import router, { useRouter } from "next/router";
 import useSWR from "swr";
-import { UICore } from "../../components";
+import { UICore, Content } from "../../components";
 import Logo from "../../icons/logo";
 // import DynamicForm from "../../components/dynamic_form";
 

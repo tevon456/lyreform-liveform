@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import useSWR from "swr";
-import { UICore } from "../ ../components";
+import { UICore } from "../../components";
 // import DynamicForm from "../../components/dynamic_form";
 
 const fetcher = async (url) => {

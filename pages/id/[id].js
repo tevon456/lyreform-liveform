@@ -18,11 +18,11 @@ const fetcher = async (url) => {
 export default function Form() {
   const { query } = useRouter();
   const { data, error } = useSWR(
-    () => query.id && `https://api.lyreform.com/v1/form/${query.id}`,
+    () => query.id && `http://localhost:8000/v1/form/public/${query.id}`,
     fetcher
   );
 
-  console.log(data, error, query);
+  console.log(error, data);
 
   if (error)
     return (

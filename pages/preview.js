@@ -43,7 +43,7 @@ export default function Preview() {
 
         <UICore.Flex justify="center">
           {JSON.parse(previewSchema) ? (
-            <DynamicForm data={JSON.parse(previewSchema)} />
+            <DynamicForm live={false} data={JSON.parse(previewSchema)} />
           ) : (
             <UICore.Loader />
           )}

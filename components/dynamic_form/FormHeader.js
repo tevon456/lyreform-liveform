@@ -4,7 +4,7 @@ import styled from "styled-components/macro";
 import { UICore } from "..";
 
 const StyledFormHeader = styled.div`
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 4px 4px 0px 0px;
   padding: 1em;
   z-index: 2;
   min-height: 70px;

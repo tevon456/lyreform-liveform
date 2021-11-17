@@ -100,7 +100,7 @@ const device = {
 const StyledForm = styled.form`
   max-width: 800px;
   width: 800px;
-  border-radius: 0px;
+  border-radius: 4px;
   box-shadow: rgb(0 0 0 / 8%) 0px 0px 0px 2px;
 `;
 

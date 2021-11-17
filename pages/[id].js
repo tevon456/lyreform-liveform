@@ -62,7 +62,7 @@ export default function Form() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <UICore.Flex justify="center">
-        <DynamicForm data={data} />
+        <DynamicForm live data={data} />
       </UICore.Flex>
     </UICore.Page>
   );

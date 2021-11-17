@@ -31,7 +31,7 @@ const Input = ({ label, field_type, ...props }) => {
       {label || "text"}
       {props.required ? " *" : null}
 
-      <StyledInput {...props} data-label={label} data-fieldType={field_type} />
+      <StyledInput {...props} data-label={label} data-field_type={field_type} />
     </Label>
   );
 };

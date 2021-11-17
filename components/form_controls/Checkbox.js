@@ -104,7 +104,7 @@ function Checkbox(props) {
         tabIndex={0}
         defaultChecked={props.checked || false}
         data-label={props.parentLabel}
-        data-fieldType={props.fieldType}
+        data-field_type={props.field_type}
       />
       <span />
     </StyledCheckbox>

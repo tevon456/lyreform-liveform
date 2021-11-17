@@ -47,7 +47,7 @@ const SelectInput = ({ disabled, ...props }) => {
       <StyledSelect
         {...props}
         data-label={props.label}
-        data-fieldType={props.fieldType}
+        data-field_type={props.field_type}
       >
         <option selected disabled>
           select...

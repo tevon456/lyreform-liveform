@@ -34,7 +34,7 @@ const TextArea = ({ label, ...props }) => {
       <TextAreaInput
         {...props}
         data-label={label}
-        data-fieldType={props.fieldType}
+        data-field_type={props.field_type}
       />
     </Label>
   );

@@ -68,21 +68,21 @@ export class FormHelper {
             // checkboxes
             data[element.name] = {
               value: (data[element.name]?.value || []).concat(element.value),
-              field_type: element.dataset.field_type,
+              field_type: element.dataset["field_type"],
               label: element.dataset.label,
             };
           } else if (FormHelper.isMultiSelect(element)) {
             // selects
             data[element.name] = {
               value: FormHelper.getSelectValues(element),
-              field_type: element.dataset.field_type,
+              field_type: element.dataset["field_type"],
               label: element.dataset.label,
             };
           } else {
             // every other field
             data[element.name] = {
               value: element.value,
-              field_type: element.dataset.field_type,
+              field_type: element.dataset["field_type"],
               label: element.dataset.label,
             };
           }

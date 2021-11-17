@@ -58,7 +58,7 @@ function Signature(props) {
         name={props.name}
         required={props.required}
         data-label={props.label}
-        data-fieldType={props.fieldType}
+        data-field_type={props.field_type}
       />
       <SignatureModal
         open={signatureOpen}

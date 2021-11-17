@@ -26,31 +26,29 @@ export default function Preview() {
   }
 
   return (
-    <UICore.Page>
-      <Head>
-        <title>{JSON.parse(previewSchema)?.name || "Lyreform"}</title>
-        <meta name="description" content="form created using Lyreform" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <UICore.Flex justify="center">
-        <Content.Card width="800px" pd="10px" mb="40px">
-          <UICore.Text mb="4px" mt="2px" color="var(--warning)" weight="500">
-            Note
-          </UICore.Text>
-          <UICore.Text mb="2px" mt="2px" size="sm">
-            This is a preview version of your form. If you have issues with
-            preview updates try closing this tab and clicking preview again from
-            the builder toolbar.
-          </UICore.Text>
-        </Content.Card>
-      </UICore.Flex>
-      <UICore.Flex justify="center">
-        {JSON.parse(previewSchema) ? (
-          <DynamicForm data={JSON.parse(previewSchema)} />
-        ) : (
-          "Loading..."
-        )}
-      </UICore.Flex>
-    </UICore.Page>
+    <>
+      <UICore.Box bg="white" width="100%">
+        <UICore.Text align="center" mb="2px" mt="2px" size="sm">
+          This is a preview version of your form. If you have issues with
+          preview updates try closing this tab and clicking preview again from
+          the builder toolbar.
+        </UICore.Text>
+      </UICore.Box>
+      <UICore.Page>
+        <Head>
+          <title>{JSON.parse(previewSchema)?.name || "Lyreform"}</title>
+          <meta name="description" content="form created using Lyreform" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+
+        <UICore.Flex justify="center">
+          {JSON.parse(previewSchema) ? (
+            <DynamicForm data={JSON.parse(previewSchema)} />
+          ) : (
+            <UICore.Loader />
+          )}
+        </UICore.Flex>
+      </UICore.Page>
+    </>
   );
 }

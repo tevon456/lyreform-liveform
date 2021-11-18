@@ -41,7 +41,7 @@ const SButton = styled.button`
     color: var(--text-light);
     cursor: not-allowed;
     box-shadow: none;
-    opacity: 0.5;
+    opacity: 0.8;
     filter: grayscale(100%);
   }
 

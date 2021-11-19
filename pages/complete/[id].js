@@ -22,7 +22,7 @@ export default function Complete() {
             Your submission was sent successfully.
           </UICore.Text>
           <UICore.Flex justify="center" align="center">
-            <a href={`${query.id}`}>
+            <a href={`/${query.id}`}>
               <UICore.Text align="center" color="var(--primary)">
                 Submit another
               </UICore.Text>

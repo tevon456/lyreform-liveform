@@ -64,6 +64,11 @@ export default function DynamicForm({ ...props }) {
               Submit
             </UICore.Button>
           </div>
+          {error ? (
+            <UICore.Text color={body_foreground}>
+              An error occurred while submitting, please try again
+            </UICore.Text>
+          ) : null}
         </UICore.Flex>
       </FormBody>
       <FormFooter

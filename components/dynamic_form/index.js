@@ -1,12 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
 import { FormControls, UICore } from "..";
+import router from "next/router";
 import { useBackground } from "../../hooks";
 import FormFooter from "./FormFooter";
 import FormHeader from "./FormHeader";
+import * as FormUtility from "./utils";
 
-export default function DynamicForm({ ...props }) {
+export default function DynamicForm({ live, id = null, ...props }) {
   const [applyBackground] = useBackground();
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
+
   let {
     name,
     logo_url,
@@ -26,8 +31,28 @@ export default function DynamicForm({ ...props }) {
     // eslint-disable-next-line
   }, []);
 
+  async function formSubmit(data) {
+    const url = "http://localhost:8000/v1/submission";
+    const response = await fetch(url, {
+      method: "POST",
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache",
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify({ data, formId: id }),
+    });
+    return response.json();
+  }
+
   return (
     <StyledForm
+      method="post"
+      id={`lyreform_name`}
       css={`
         background: ${body_background};
       `}
@@ -58,10 +83,29 @@ export default function DynamicForm({ ...props }) {
               fullWidth
               size="lg"
               type="button"
+              disabled={submitting}
+              onClick={(event) => {
+                if (live && submitting === false) {
+                  setSubmitting(true);
+                  FormUtility.handleSubmit(event, (data) =>
+                    formSubmit(data)
+                      .then(() => {
+                        router.push(`/complete/${id}`);
+                        setError(false);
+                        setSubmitting(false);
+                      })
+                      .catch((error) => {
+                        console.log(error);
+                        setError(true);
+                        setSubmitting(false);
+                      })
+                  );
+                }
+              }}
               bg={controls_background}
               color={controls_foreground}
             >
-              Submit
+              {submitting ? "Sending response..." : "Submit"}
             </UICore.Button>
           </div>
           {error ? (

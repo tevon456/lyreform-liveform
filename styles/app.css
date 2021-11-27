@@ -52,3 +52,7 @@ a:visited {
   font-weight: 500;
   margin-top: 2px;
 }
+
+.grecaptcha-badge {
+  visibility: hidden;
+}

@@ -32,21 +32,37 @@ export default function DynamicForm({ live, id = null, ...props }) {
   }, []);
 
   async function formSubmit(data) {
-    const url = "http://localhost:8000/v1/submission";
-    const response = await fetch(url, {
+    const fetchConfig = {
       method: "POST",
-      mode: "cors", // no-cors, *cors, same-origin
+      mode: "cors",
       cache: "no-cache",
-      credentials: "same-origin", // include, *same-origin, omit
+      credentials: "same-origin",
       headers: {
         "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
-      redirect: "follow", // manual, *follow, error
-      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify({ data, formId: id }),
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+    };
+    const url = "http://localhost:8000/v1/submission";
+
+    grecaptcha.ready(async function () {
+      const token = await grecaptcha.execute(
+        "6Ld4FvwUAAAAAGOOSWhG2OT_czBwmOr-ZACMLSfM",
+        {
+          action: "submit",
+        }
+      );
+      const response = await fetch(url, {
+        ...fetchConfig,
+        body: JSON.stringify({
+          data,
+          formId: id,
+          token,
+        }),
+      });
+
+      return response.json();
     });
-    return response.json();
   }
 
   return (

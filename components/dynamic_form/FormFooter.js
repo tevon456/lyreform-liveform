@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { UICore } from "../";
 import styled from "styled-components/macro";
 import chroma from "chroma-js";
@@ -10,7 +9,7 @@ const StyledFormFooter = styled.footer`
   padding: 1em 1em;
 `;
 
-function FormFooter({ body_background }) {
+function FormFooter({ body_background, controls_background }) {
   return (
     <StyledFormFooter
       css={`
@@ -18,8 +17,8 @@ function FormFooter({ body_background }) {
       `}
     >
       <UICore.Flex justify="center" align="center">
-        <Link href="/" passHref>
-          <>
+        <a href="lyreform.com" target="_blank" rel="noopener noreferrer">
+          <UICore.Flex align="center">
             <UICore.Text
               size="sm"
               className="margin-top--md"
@@ -43,13 +42,33 @@ function FormFooter({ body_background }) {
                   : "#ced4da"
               }
             />
-          </>
-        </Link>
+          </UICore.Flex>
+        </a>
       </UICore.Flex>
-      <UICore.Text align="center" size="xs" color="var(--neutral-500)">
+      <UICore.Text
+        align="center"
+        size="xs"
+        color={chroma(body_background).luminance() > 0.35 ? "#6c757d" : "#fff"}
+      >
         This site is protected by reCAPTCHA and the Google{" "}
-        <a href="https://policies.google.com/privacy">Privacy Policy</a> and{" "}
-        <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+        <a
+          style={{ color: controls_background, textDecoration: "underline" }}
+          href="https://policies.google.com/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Privacy Policy
+        </a>{" "}
+        and{" "}
+        <a
+          style={{ color: controls_background, textDecoration: "underline" }}
+          href="https://policies.google.com/terms"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Terms of Service
+        </a>{" "}
+        apply.
       </UICore.Text>
     </StyledFormFooter>
   );

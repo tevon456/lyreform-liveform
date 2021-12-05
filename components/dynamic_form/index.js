@@ -134,6 +134,7 @@ export default function DynamicForm({ live, id = null, ...props }) {
       <FormFooter
         body_background={body_background}
         body_foreground={body_foreground}
+        controls_background={controls_background}
       />
     </StyledForm>
   );

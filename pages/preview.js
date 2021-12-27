@@ -38,7 +38,7 @@ export default function Preview() {
         <meta name="description" content="form created using Lyreform" />
         <link rel="icon" href="/favicon.ico" />
         <meta
-          http-equiv="Access-Control-Allow-Origin"
+          httpEquiv="Access-Control-Allow-Origin"
           content="http://localhost:3000"
         />
       </Head>

@@ -5,7 +5,11 @@ import DynamicForm from "../components/dynamic_form";
 
 export default function Preview() {
   let previewSchema = null;
-  let allowedOrigins = ["http://localhost:3001", "https://app.lyreform.com"];
+  let allowedOrigins = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "https://app.lyreform.com",
+  ];
   useEffect(() => {
     window?.addEventListener(
       "message",

@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
-import { Content, UICore } from "../components";
+import { useEffect } from "react";
+import { UICore } from "../components";
 import DynamicForm from "../components/dynamic_form";
 
 export default function Preview() {
@@ -17,7 +17,8 @@ export default function Preview() {
         if (!allowedOrigins.includes(event.origin)) {
           return;
         }
-        console.log(event.data);
+        console.log("event: ", event);
+        console.log("event-data: ", event.data);
         localStorage.setItem("previewData", event.data);
       },
       false
@@ -32,6 +33,15 @@ export default function Preview() {
 
   return (
     <>
+      <Head>
+        <title>{JSON.parse(previewSchema)?.name || "Lyreform"}</title>
+        <meta name="description" content="form created using Lyreform" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          http-equiv="Access-Control-Allow-Origin"
+          content="http://localhost:3000"
+        />
+      </Head>
       <UICore.Box bg="white" width="100%">
         <UICore.Text align="center" mb="2px" mt="2px" size="sm">
           This is a preview version of your form. If you have issues with
@@ -40,12 +50,6 @@ export default function Preview() {
         </UICore.Text>
       </UICore.Box>
       <UICore.Page>
-        <Head>
-          <title>{JSON.parse(previewSchema)?.name || "Lyreform"}</title>
-          <meta name="description" content="form created using Lyreform" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
         <UICore.Flex justify="center">
           {JSON.parse(previewSchema) ? (
             <DynamicForm live={false} data={JSON.parse(previewSchema)} />

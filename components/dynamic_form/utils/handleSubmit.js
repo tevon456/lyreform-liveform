@@ -1,7 +1,7 @@
 import pristine from "pristinejs";
 import { FormHelper } from "./formHelper";
 
-export default function handleSubmit(event, callback) {
+export default function handleSubmit(event, callback, error) {
   event.preventDefault();
   let defaultConfig = {
     // class of the parent element where the error/success class is added
@@ -19,5 +19,9 @@ export default function handleSubmit(event, callback) {
   let validator = new pristine(form);
   let data = FormHelper.formResponseToObject(form.elements);
 
-  if (validator.validate()) callback(data);
+  if (validator.validate()) {
+    callback(data);
+  } else {
+    error(validator.getErrors());
+  }
 }

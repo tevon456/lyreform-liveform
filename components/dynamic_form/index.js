@@ -103,18 +103,25 @@ export default function DynamicForm({ live, id = null, ...props }) {
               onClick={(event) => {
                 if (live && submitting === false) {
                   setSubmitting(true);
-                  FormUtility.handleSubmit(event, (data) =>
-                    formSubmit(data)
-                      .then(() => {
-                        router.push(`/complete/${id}`);
-                        setError(false);
-                        setSubmitting(false);
-                      })
-                      .catch((error) => {
-                        console.log(error);
-                        setError(true);
-                        setSubmitting(false);
-                      })
+                  FormUtility.handleSubmit(
+                    event,
+                    (data) =>
+                      formSubmit(data)
+                        .then(() => {
+                          router.push(`/complete/${id}`);
+                          setError(false);
+                          setSubmitting(false);
+                        })
+                        .catch((error) => {
+                          console.log(error);
+                          setError(true);
+                          setSubmitting(false);
+                        }),
+                    (error) => {
+                      console.log(error);
+                      setError(error);
+                      setSubmitting(false);
+                    }
                   );
                 }
               }}

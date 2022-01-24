@@ -54,9 +54,8 @@ a:visited {
 }
 
 .has-danger > input {
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVQYV43MyREAIAgEQYhp88+AnFR8UB5c8+4apkYABldOkYhQCg3xKjqeSI0LX+RCD30wQhfMkMEKbdhBCic4pSWfsf7gTgAAAABJRU5ErkJggg==")
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV43MSQ4AIAgEQXj58HMVD8SFrc+VZmokIoMrpwgApdAQr6LjidS48EUu9NAHI3TBDBms0IYdpHACqNwmhtqtt8kAAAAASUVORK5CYII=")
     repeat;
-  text-shadow: 2px 2px 0px #fff;
 }
 
 .grecaptcha-badge {

@@ -123,6 +123,22 @@ export default function DynamicForm({ live, id = null, ...props }) {
                       setSubmitting(false);
                     }
                   );
+                } else {
+                  setSubmitting(true);
+                  FormUtility.handleSubmit(
+                    event,
+                    (data) => {
+                      setTimeout(() => {
+                        setError(false);
+                        setSubmitting(false);
+                      }, 4000);
+                    },
+                    (error) => {
+                      console.log(error);
+                      setError(error);
+                      setSubmitting(false);
+                    }
+                  );
                 }
               }}
               bg={controls_background}

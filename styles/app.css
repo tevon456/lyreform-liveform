@@ -53,6 +53,11 @@ a:visited {
   margin-top: 2px;
 }
 
+.form-group ~ .has-danger {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVQYV43MyREAIAgEQYhp88+AnFR8UB5c8+4apkYABldOkYhQCg3xKjqeSI0LX+RCD30wQhfMkMEKbdhBCic4pSWfsf7gTgAAAABJRU5ErkJggg==")
+    repeat;
+}
+
 .grecaptcha-badge {
   visibility: hidden;
 }

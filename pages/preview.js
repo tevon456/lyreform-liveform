@@ -20,11 +20,10 @@ export default function Preview() {
           return;
         }
         setPreview(JSON.parse(event.data));
-        console.log("preview: ", preview);
+        console.log(event.data);
       },
       false
     );
-
     // eslint-disable-next-line
   }, [preview]);
 

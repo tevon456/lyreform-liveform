@@ -33,6 +33,10 @@ export default function Preview() {
         <title>{preview?.name || "Lyreform"}</title>
         <meta name="description" content="form created using Lyreform" />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/balloon-css/balloon.min.css"
+        />
       </Head>
       <UICore.Box bg="white" width="100%">
         <UICore.Text align="center" mb="2px" mt="2px" size="sm">

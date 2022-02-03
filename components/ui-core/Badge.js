@@ -12,7 +12,6 @@ function Badge({
       bg={bg}
       pd="0px 6px"
       mg="0px"
-      // border={`1px solid ${color}`}
       mr="8px"
       width="max-content"
       radius="2px"
@@ -20,6 +19,7 @@ function Badge({
       {...rest}
     >
       <Text
+        size="sm"
         mt="0px"
         mb="0px"
         color={color}
@@ -33,10 +33,3 @@ function Badge({
 }
 
 export default Badge;
-
-/*
-description
-required
-type
-options for option fields
-*/

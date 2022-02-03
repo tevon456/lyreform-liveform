@@ -34,13 +34,13 @@ const SelectInput = ({ disabled, ...props }) => {
         <>
           <UICore.Space amount="2" />
           <UICore.Badge
-            background="var(--dark-grey)"
+            background="var(--neutral-600)"
             color="#fff"
             aria-label="required"
             data-balloon-pos="right"
             size="xs"
           >
-            R
+            *
           </UICore.Badge>
         </>
       ) : null}

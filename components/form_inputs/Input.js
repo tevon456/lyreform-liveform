@@ -6,8 +6,8 @@ import { globals } from "./globals";
 const StyledInput = styled.input`
   appearance: none;
   display: block;
-  width: ${(props) => props.width || "calc(100% - calc(12px*2))"};
-  padding: 6px;
+  width: ${(props) => props.width || "calc(100% - calc(8px * 2))"};
+  padding: 8px 6px;
   min-width: 150px;
   margin-block-start: 0.5em;
   border-radius: ${globals.borderRadius};

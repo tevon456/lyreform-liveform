@@ -7,8 +7,8 @@ import { UICore } from "..";
 const StyledSelect = styled.select`
   display: block;
   width: ${(props) => props.width || "calc(100%)"};
-  width: ${(props) => props.width || "calc(100% - calc(4px*2))"};
-  padding: 6px;
+  width: ${(props) => props.width || "calc(100% - calc(4px * 0))"};
+  padding: 8px 6px;
   min-width: 150px;
   margin-block-start: 0.5em;
   border-radius: ${globals.borderRadius};
@@ -34,13 +34,13 @@ const SelectInput = ({ disabled, ...props }) => {
         <>
           <UICore.Space amount="2" />
           <UICore.Badge
-            background="var(--neutral-600)"
+            bg="var(--neutral-600)"
             color="#fff"
             aria-label="required"
             data-balloon-pos="right"
             size="xs"
           >
-            *
+            r
           </UICore.Badge>
         </>
       ) : null}

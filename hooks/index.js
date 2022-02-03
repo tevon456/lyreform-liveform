@@ -5,8 +5,6 @@ import useOnClickOutside from "./useOnClickOutside";
 import useKeyPress from "./useKeyPress";
 import useNavbar from "./useNavbar";
 import useDialog from "./useDialog";
-// import useLockBodyScroll from "./useLockBodyScroll";
-// import useInput from "./useInput";
 
 export {
   useNavbar,
@@ -16,6 +14,4 @@ export {
   useRestResponse,
   useKeyPress,
   useDialog,
-  //   useLockBodyScroll,
-  //   useInput,
 };

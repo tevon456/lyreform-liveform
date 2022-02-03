@@ -1,15 +1,17 @@
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { UICore } from "../components";
 import DynamicForm from "../components/dynamic_form";
 
 export default function Preview() {
-  let previewSchema = null;
+  let [preview, setPreview] = useState(null);
+
   let allowedOrigins = [
     "http://localhost:3000",
     "http://localhost:3001",
     "https://app.lyreform.com",
   ];
+
   useEffect(() => {
     window?.addEventListener(
       "message",
@@ -17,30 +19,21 @@ export default function Preview() {
         if (!allowedOrigins.includes(event.origin)) {
           return;
         }
-        console.log("event: ", event);
-        console.log("event-data: ", event.data);
-        localStorage.setItem("previewData", event.data);
+        setPreview(JSON.parse(event.data));
+        console.log("preview: ", preview);
       },
       false
     );
-    // eslint-disable-next-line
-  }, []);
 
-  if (typeof window !== "undefined") {
-    previewSchema = localStorage.getItem("previewData");
-    console.log(previewSchema);
-  }
+    // eslint-disable-next-line
+  }, [preview]);
 
   return (
     <>
       <Head>
-        <title>{JSON.parse(previewSchema)?.name || "Lyreform"}</title>
+        <title>{preview?.name || "Lyreform"}</title>
         <meta name="description" content="form created using Lyreform" />
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          httpEquiv="Access-Control-Allow-Origin"
-          content="http://localhost:3000"
-        />
       </Head>
       <UICore.Box bg="white" width="100%">
         <UICore.Text align="center" mb="2px" mt="2px" size="sm">
@@ -51,8 +44,8 @@ export default function Preview() {
       </UICore.Box>
       <UICore.Page>
         <UICore.Flex justify="center">
-          {JSON.parse(previewSchema) ? (
-            <DynamicForm live={false} data={JSON.parse(previewSchema)} />
+          {preview ? (
+            <DynamicForm live={false} data={preview} />
           ) : (
             <UICore.Loader />
           )}

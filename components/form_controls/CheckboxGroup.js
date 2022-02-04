@@ -6,7 +6,7 @@ const CheckboxGroup = ({ options, ...rest }) => {
   return (
     <div>
       <UICore.Flex align="center">
-        <FormControls.Label>{rest.label}</FormControls.Label>
+        <span>{rest.label}</span>
         {rest?.required ? (
           <>
             <UICore.Space amount="2" />

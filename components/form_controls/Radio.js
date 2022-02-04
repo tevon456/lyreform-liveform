@@ -9,6 +9,7 @@ const StyledRadio = styled.label`
   position: relative;
   padding-left: 1.7em;
   margin-bottom: 12px;
+  margin-block-start: 0.5em;
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   font-size: 1em;
   border: 2px solid ${(props) => props.baseColor || "var(--secondary-color)"};

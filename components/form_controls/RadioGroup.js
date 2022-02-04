@@ -7,6 +7,7 @@ const RadioGroup = ({ options, ...rest }) => {
     <div>
       <UICore.Flex align="center">
         <span>{rest.label}</span>
+        <FormControls.Label as="span">{rest.label}</FormControls.Label>
         {rest?.required ? (
           <>
             <UICore.Space amount="2" />

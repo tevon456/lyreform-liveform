@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Label from "../form_controls/Label";
+import { UICore } from "..";
 import { globals } from "./globals";
 
 const StyledInput = styled.input`
@@ -28,8 +29,23 @@ const StyledInput = styled.input`
 const Input = ({ label, field_type, ...props }) => {
   return (
     <Label small={props.small} className="form-group">
-      {label || "text"}
-      {props.required ? " *" : null}
+      <UICore.Flex align="center">
+        <span>{label || "select dropdown"}</span>
+        {props.required ? (
+          <>
+            <UICore.Space amount="2" />
+            <UICore.Badge
+              bg="var(--neutral-600)"
+              color="#fff"
+              aria-label="required"
+              data-balloon-pos="right"
+              size="xs"
+            >
+              *
+            </UICore.Badge>
+          </>
+        ) : null}
+      </UICore.Flex>
 
       <StyledInput {...props} data-label={label} data-field_type={field_type} />
     </Label>

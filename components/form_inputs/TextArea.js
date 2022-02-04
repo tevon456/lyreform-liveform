@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Label from "../form_controls/Label";
+import { UICore } from "..";
 import { globals } from "./globals";
 
 const TextAreaInput = styled.textarea`
@@ -29,8 +30,23 @@ const TextArea = ({ label, ...props }) => {
   return (
     <Label className="form-group">
       <br />
-      {label || "text"}
-      {props.required ? " *" : null}
+      <UICore.Flex align="center">
+        <span>{label || "select dropdown"}</span>
+        {props.required ? (
+          <>
+            <UICore.Space amount="2" />
+            <UICore.Badge
+              bg="var(--neutral-600)"
+              color="#fff"
+              aria-label="required"
+              data-balloon-pos="right"
+              size="xs"
+            >
+              *
+            </UICore.Badge>
+          </>
+        ) : null}
+      </UICore.Flex>
       <TextAreaInput
         {...props}
         data-label={label}

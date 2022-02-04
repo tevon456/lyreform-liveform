@@ -29,21 +29,24 @@ const StyledSelect = styled.select`
 const SelectInput = ({ disabled, ...props }) => {
   return (
     <Label small={props.small} className="form-group">
-      {props.label || "select dropdown"}
-      {props.required ? (
-        <>
-          <UICore.Space amount="2" />
-          <UICore.Badge
-            bg="var(--neutral-600)"
-            color="#fff"
-            aria-label="required"
-            data-balloon-pos="right"
-            size="xs"
-          >
-            r
-          </UICore.Badge>
-        </>
-      ) : null}
+      <UICore.Flex align="center">
+        <span>{props.label || "select dropdown"}</span>
+        {props.required ? (
+          <>
+            <UICore.Space amount="2" />
+            <UICore.Badge
+              bg="var(--neutral-600)"
+              color="#fff"
+              aria-label="required"
+              data-balloon-pos="right"
+              size="xs"
+            >
+              *
+            </UICore.Badge>
+          </>
+        ) : null}
+      </UICore.Flex>
+
       <StyledSelect
         {...props}
         data-label={props.label}

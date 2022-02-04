@@ -86,7 +86,12 @@ export default function DynamicForm({ live, id = null, ...props }) {
       >
         <UICore.Flex justify="center" direction="column">
           {fields.map((field) => (
-            <div key={field.id} className="margin-bottom--md">
+            <div
+              key={field.id}
+              css={`
+                margin-bottom: var(--space-lg);
+              `}
+            >
               {FormControls.RenderFields(
                 field,
                 controls_background,

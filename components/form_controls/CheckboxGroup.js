@@ -1,12 +1,20 @@
 import React from "react";
 import { FormControls } from "..";
 import { UICore } from "..";
+import "styled-components/macro";
 
 const CheckboxGroup = ({ options, ...rest }) => {
   return (
     <div>
       <UICore.Flex align="center">
-        <FormControls.Label as="span">{rest.label}</FormControls.Label>
+        <FormControls.Label
+          as="span"
+          css={`
+            display: initial;
+          `}
+        >
+          {rest.label}
+        </FormControls.Label>
         {rest?.required ? (
           <>
             <UICore.Space amount="2" />

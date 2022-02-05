@@ -6,7 +6,7 @@ import "styled-components/macro";
 const RadioGroup = ({ options, ...rest }) => {
   return (
     <div>
-      <UICore.Flex align="center">
+      <UICore.Flex align="center" className="form-group">
         <FormControls.Label
           as="span"
           css={`
@@ -30,7 +30,7 @@ const RadioGroup = ({ options, ...rest }) => {
           </>
         ) : null}
       </UICore.Flex>
-      <div className="form-group">
+      <div>
         {options.map((items) => (
           <FormControls.Radio
             key={Math.random()}

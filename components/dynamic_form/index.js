@@ -94,6 +94,7 @@ export default function DynamicForm({ live, id = null, ...props }) {
             >
               {FormControls.RenderFields(
                 field,
+                body_background,
                 controls_background,
                 controls_foreground
               )}

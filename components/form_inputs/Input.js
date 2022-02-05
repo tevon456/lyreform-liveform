@@ -7,7 +7,10 @@ import { globals } from "./globals";
 
 const StyledInput = styled.input`
   appearance: none;
-  background: ${globals.backgroundColor};
+  background: ${(props) =>
+    chroma(props.body_background).luminance() > globals.borderLuminance
+      ? "#fff"
+      : globals.backgroundColor};
   display: block;
   width: ${(props) => props.width || "calc(100% - calc(8px * 2))"};
   padding: 8px 6px;

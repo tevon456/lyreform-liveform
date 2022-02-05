@@ -38,7 +38,6 @@ const TextAreaInput = styled.textarea`
 const TextArea = ({ label, ...props }) => {
   return (
     <Label className="form-group">
-      <br />
       <UICore.Flex align="center">
         <span>{label || "select dropdown"}</span>
         {props.required ? (

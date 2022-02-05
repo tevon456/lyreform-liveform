@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Label from "../form_controls/Label";
+import chroma from "chroma-js";
 import { UICore } from "..";
 import { globals } from "./globals";
 
@@ -8,11 +9,16 @@ const TextAreaInput = styled.textarea`
   max-width: calc(100% - calc(12px * 2));
   min-width: calc(100% - calc(12px * 2));
   padding: 8px;
+  background: ${globals.backgroundColor};
   margin-block-start: 0.5em;
   border-radius: ${globals.borderRadius};
   box-shadow: ${globals.shadow};
   min-height: 100px;
-  border: ${globals.border};
+  border: 0.15em solid
+    ${(props) =>
+      chroma(props.body_background).luminance() > globals.borderLuminance
+        ? "#292929"
+        : "#ffffff"};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "initial")};
   font-size: 1em;
   font-family: var(--font-primary);

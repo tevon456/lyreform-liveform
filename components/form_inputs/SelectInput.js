@@ -7,7 +7,10 @@ import { UICore } from "..";
 
 const StyledSelect = styled.select`
   display: block;
-  background: ${globals.backgroundColor};
+  background: ${(props) =>
+    chroma(props.body_background).luminance() > globals.borderLuminance
+      ? "#fff"
+      : globals.backgroundColor};
   width: ${(props) => props.width || "calc(100%)"};
   width: ${(props) => props.width || "calc(100% - calc(4px * 0))"};
   padding: 8px 6px;

@@ -9,7 +9,10 @@ const TextAreaInput = styled.textarea`
   max-width: calc(100% - calc(12px * 2));
   min-width: calc(100% - calc(12px * 2));
   padding: 8px;
-  background: ${globals.backgroundColor};
+  background: ${(props) =>
+    chroma(props.body_background).luminance() > globals.borderLuminance
+      ? "#fff"
+      : globals.backgroundColor};
   margin-block-start: 0.5em;
   border-radius: ${globals.borderRadius};
   box-shadow: ${globals.shadow};

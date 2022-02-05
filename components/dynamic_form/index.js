@@ -155,7 +155,7 @@ export default function DynamicForm({ live, id = null, ...props }) {
           </div>
           {error ? (
             <UICore.Text color={body_foreground}>
-              An error occurred while submitting, please try again
+              Please review this form for errors and try again.
             </UICore.Text>
           ) : null}
         </UICore.Flex>

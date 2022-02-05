@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Label from "../form_controls/Label";
+import chroma from "chroma-js";
 import { UICore } from "..";
 import { globals } from "./globals";
 
@@ -13,7 +14,8 @@ const StyledInput = styled.input`
   margin-block-start: 0.5em;
   border-radius: ${globals.borderRadius};
   box-shadow: ${globals.shadow};
-  border: ${globals.border};
+  border: ${(props) =>
+    chroma(props.body_background).luminance() > 0.45 ? "#292929" : "#ffffff"};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "initial")};
   font-size: ${(props) => (props.small ? "12px" : "  16px")};
 

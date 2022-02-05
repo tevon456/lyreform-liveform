@@ -39,7 +39,14 @@ const TextArea = ({ label, ...props }) => {
   return (
     <Label className="form-group">
       <UICore.Flex align="center">
-        <span>{label || "select dropdown"}</span>
+        <FormControls.Label
+          as="span"
+          css={`
+            display: initial;
+          `}
+        >
+          {label}
+        </FormControls.Label>
         {props.required ? (
           <>
             <UICore.Space amount="2" />

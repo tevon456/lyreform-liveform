@@ -6,7 +6,7 @@ import "styled-components/macro";
 const CheckboxGroup = ({ options, ...rest }) => {
   return (
     <div>
-      <UICore.Flex align="center">
+      <UICore.Flex align="center" className="form-group">
         <FormControls.Label
           as="span"
           css={`

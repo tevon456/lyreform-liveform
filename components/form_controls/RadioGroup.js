@@ -29,6 +29,16 @@ const RadioGroup = ({ options, ...rest }) => {
             </UICore.Badge>
           </>
         ) : null}
+        <UICore.Badge
+          bg="red"
+          className="error-badge"
+          color="#fff"
+          css={`
+            visibility: hidden;
+          `}
+        >
+          Error
+        </UICore.Badge>
       </UICore.Flex>
       <div>
         {options.map((items) => (

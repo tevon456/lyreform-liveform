@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import Label from "../form_controls/Label";
 import chroma from "chroma-js";
 import { UICore } from "..";
@@ -54,7 +54,14 @@ const Input = ({ label, field_type, ...props }) => {
             </UICore.Badge>
           </>
         ) : null}
-        <UICore.Badge bg="red" color="#fff">
+        <UICore.Badge
+          bg="red"
+          className="error-badge"
+          color="#fff"
+          css={`
+            visibility: hidden;
+          `}
+        >
           Error
         </UICore.Badge>
       </UICore.Flex>

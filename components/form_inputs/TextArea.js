@@ -54,6 +54,16 @@ const TextArea = ({ label, ...props }) => {
             </UICore.Badge>
           </>
         ) : null}
+        <UICore.Badge
+          bg="red"
+          className="error-badge"
+          color="#fff"
+          css={`
+            visibility: hidden;
+          `}
+        >
+          Error
+        </UICore.Badge>
       </UICore.Flex>
       <TextAreaInput
         {...props}

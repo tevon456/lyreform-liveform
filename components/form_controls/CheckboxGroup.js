@@ -11,13 +11,14 @@ const CheckboxGroup = ({ options, ...rest }) => {
           as="span"
           css={`
             display: initial;
+            margin-right: 4px;
           `}
         >
           {rest.label}
         </FormControls.Label>
+        <UICore.Space amount="2" />
         {rest?.required ? (
           <>
-            <UICore.Space amount="2" />
             <UICore.Badge
               bg="var(--neutral-600)"
               color="#fff"

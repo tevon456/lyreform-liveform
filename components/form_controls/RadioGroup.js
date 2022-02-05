@@ -15,9 +15,9 @@ const RadioGroup = ({ options, ...rest }) => {
         >
           {rest.label}
         </FormControls.Label>
+        <UICore.Space amount="2" />
         {rest?.required ? (
           <>
-            <UICore.Space amount="2" />
             <UICore.Badge
               bg="var(--neutral-600)"
               color="#fff"

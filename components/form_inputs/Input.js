@@ -40,9 +40,9 @@ const Input = ({ label, field_type, ...props }) => {
     <Label small={props.small} className="form-group">
       <UICore.Flex align="center">
         <span>{label || "select dropdown"}</span>
+        <UICore.Space amount="2" />
         {props.required ? (
           <>
-            <UICore.Space amount="2" />
             <UICore.Badge
               bg="var(--neutral-600)"
               color="#fff"

@@ -39,17 +39,16 @@ const SelectInput = ({ disabled, ...props }) => {
   return (
     <Label small={props.small} className="form-group">
       <UICore.Flex align="center">
-        <FormControls.Label
-          as="span"
+        <span
           css={`
-            display: initial;
+            margin-right: 4px;
           `}
         >
-          {props.label}
-        </FormControls.Label>
+          {props.label || "select dropdown"}
+        </span>
+        <UICore.Space amount="2" />
         {props.required ? (
           <>
-            <UICore.Space amount="2" />
             <UICore.Badge
               bg="var(--neutral-600)"
               color="#fff"

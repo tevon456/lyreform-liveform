@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Label from "../form_controls/Label";
 import chroma from "chroma-js";
+import { FormControls } from "..";
 import { UICore } from "..";
 import { globals } from "./globals";
 
@@ -47,9 +48,9 @@ const TextArea = ({ label, ...props }) => {
         >
           {label}
         </FormControls.Label>
+        <UICore.Space amount="2" />
         {props.required ? (
           <>
-            <UICore.Space amount="2" />
             <UICore.Badge
               bg="var(--neutral-600)"
               color="#fff"

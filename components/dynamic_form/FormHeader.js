@@ -47,8 +47,7 @@ function FormHeader({
       ) : null}
       <UICore.Text
         as="h1"
-        align="center"
-        size="lg"
+        size="md"
         mt="var(--space-md)"
         weight={700}
         color={header_foreground}

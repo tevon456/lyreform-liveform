@@ -15,7 +15,9 @@ const StyledInput = styled.input`
   border-radius: ${globals.borderRadius};
   box-shadow: ${globals.shadow};
   border: ${(props) =>
-    chroma(props.body_background).luminance() > 0.45 ? "#292929" : "#ffffff"};
+    chroma(props.body_background).luminance() > 0.45
+      ? "0.15em solid #292929"
+      : "0.15em solid #ffffff"};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "initial")};
   font-size: ${(props) => (props.small ? "12px" : "  16px")};
 

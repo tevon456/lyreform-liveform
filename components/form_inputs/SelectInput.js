@@ -39,13 +39,7 @@ const SelectInput = ({ disabled, ...props }) => {
   return (
     <Label small={props.small} className="form-group">
       <UICore.Flex align="center">
-        <span
-          css={`
-            margin-right: 4px;
-          `}
-        >
-          {props.label || "select dropdown"}
-        </span>
+        <span>{props.label || "select dropdown"}</span>
         <UICore.Space amount="2" />
         {props.required ? (
           <>
@@ -77,7 +71,7 @@ const SelectInput = ({ disabled, ...props }) => {
         data-label={props.label}
         data-field_type={props.field_type}
       >
-        <option selected disabled>
+        <option selected disabled value="">
           select...
         </option>
         {props.options.map((o) => (

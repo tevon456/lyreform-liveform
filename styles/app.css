@@ -53,8 +53,16 @@ a:visited {
   margin-top: 2px;
 }
 
+.error-badge {
+  visibility: hidden !important;
+}
+
 .has-danger > div .error-badge {
-  visibility: visible;
+  visibility: visible !important;
+}
+
+.has-success > div .error-badge {
+  visibility: hidden !important;
 }
 
 .grecaptcha-badge {

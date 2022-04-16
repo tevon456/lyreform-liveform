@@ -4,16 +4,13 @@ import styled from "styled-components/macro";
 import chroma from "chroma-js";
 import Logo from "../../icons/logo";
 
-const StyledFormFooter = styled.footer`
-  border-radius: 0px 0px 4px 4px;
-  padding: 1em 1em;
-`;
-
 function FormFooter({ body_background, controls_background }) {
   return (
-    <StyledFormFooter
+    <footer
       css={`
         background: ${body_background || "#fff"};
+        border-radius: 0px 0px 4px 4px;
+        padding: 1em 1em;
       `}
     >
       <UICore.Flex justify="center" align="center">
@@ -70,7 +67,7 @@ function FormFooter({ body_background, controls_background }) {
         </a>{" "}
         apply.
       </UICore.Text>
-    </StyledFormFooter>
+    </footer>
   );
 }
 

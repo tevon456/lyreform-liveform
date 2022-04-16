@@ -3,17 +3,6 @@ import Image from "next/image";
 import styled from "styled-components/macro";
 import { UICore } from "..";
 
-const StyledFormHeader = styled.div`
-  border-radius: 4px 4px 0px 0px;
-  padding: 1em;
-  z-index: 2;
-  min-height: 70px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
-`;
-
 /**
  * Form header
  * @prop {string} name - form name.
@@ -32,9 +21,17 @@ function FormHeader({
   logo_height = "64px",
 }) {
   return (
-    <StyledFormHeader
+    <div
       css={`
         background: ${header_background};
+        border-radius: 4px 4px 0px 0px;
+        padding: 1em;
+        z-index: 2;
+        min-height: 70px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
       `}
     >
       {logo_url ? (
@@ -54,7 +51,7 @@ function FormHeader({
       >
         {name}
       </UICore.Text>
-    </StyledFormHeader>
+    </div>
   );
 }
 export default FormHeader;

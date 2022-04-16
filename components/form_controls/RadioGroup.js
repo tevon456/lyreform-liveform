@@ -1,5 +1,5 @@
 import React from "react";
-import { FormControls } from "..";
+import { Radio, Label } from ".";
 import { UICore } from "..";
 import "styled-components/macro";
 
@@ -7,14 +7,14 @@ const RadioGroup = ({ options, ...rest }) => {
   return (
     <div>
       <UICore.Flex align="center" className="form-group">
-        <FormControls.Label
+        <Label
           as="span"
           css={`
             display: initial;
           `}
         >
           {rest.label}
-        </FormControls.Label>
+        </Label>
         <UICore.Space amount="2" />
         {rest?.required ? (
           <>
@@ -42,9 +42,10 @@ const RadioGroup = ({ options, ...rest }) => {
       </UICore.Flex>
       <div>
         {options.map((items) => (
-          <FormControls.Radio
+          <Radio
             key={Math.random()}
             parentLabel={rest.label}
+            required={rest?.required}
             {...rest}
             {...items}
           />

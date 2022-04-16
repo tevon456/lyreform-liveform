@@ -1,11 +1,34 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components/macro";
+import "styled-components/macro";
 import { FormControls, UICore } from "..";
 import router from "next/router";
 import { useBackground } from "../../hooks";
 import FormFooter from "./FormFooter";
 import FormHeader from "./FormHeader";
 import * as FormUtility from "./utils";
+
+const size = {
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  tabletS: "475px",
+  tablet: "768px",
+  laptop: "1024px",
+  laptopL: "1440px",
+  desktop: "2560px",
+};
+
+const device = {
+  mobileS: `(max-width: ${size.mobileS})`,
+  mobileM: `(max-width: ${size.mobileM})`,
+  mobileL: `(max-width: ${size.mobileL})`,
+  tabletS: `(max-width: ${size.tabletS})`,
+  tablet: `(max-width: ${size.tablet})`,
+  laptop: `(max-width: ${size.laptop})`,
+  laptopL: `(max-width: ${size.laptopL})`,
+  desktop: `(max-width: ${size.desktop})`,
+  desktopL: `(max-width: ${size.desktop})`,
+};
 
 export default function DynamicForm({ live, id = null, ...props }) {
   const [applyBackground] = useBackground();
@@ -43,7 +66,8 @@ export default function DynamicForm({ live, id = null, ...props }) {
       redirect: "follow",
       referrerPolicy: "no-referrer",
     };
-    const url = "http://localhost:8000/v1/submission";
+
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/submission`;
 
     grecaptcha.ready(async function () {
       const token = await grecaptcha.execute(
@@ -66,11 +90,15 @@ export default function DynamicForm({ live, id = null, ...props }) {
   }
 
   return (
-    <StyledForm
+    <form
       method="post"
       id={`lyreform_name`}
       css={`
         background: ${body_background};
+        max-width: 800px;
+        width: 800px;
+        border-radius: 4px;
+        box-shadow: rgb(0 0 0 / 8%) 0px 0px 0px 2px;
       `}
     >
       <FormHeader
@@ -79,9 +107,43 @@ export default function DynamicForm({ live, id = null, ...props }) {
         header_background={header_background}
         header_foreground={header_foreground}
       />
-      <FormBody
+      <div
         css={`
           color: ${body_foreground};
+          @media ${device.desktopL} {
+            padding-top: var(--space-xxl);
+            padding-bottom: var(--space-xxl);
+            padding-left: var(--space-xxl);
+            padding-right: var(--space-xxl);
+          }
+
+          @media ${device.desktop} {
+            padding-top: var(--space-xxl);
+            padding-bottom: var(--space-xxl);
+            padding-left: var(--space-xl);
+            padding-right: var(--space-xl);
+          }
+
+          @media ${device.laptop} {
+            padding-top: var(--space-xxl);
+            padding-bottom: var(--space-xxl);
+            padding-left: var(--space-lg);
+            padding-right: var(--space-lg);
+          }
+
+          @media ${device.tablet} {
+            padding-top: var(--space-xl);
+            padding-bottom: var(--space-xl);
+            padding-left: var(--space-md);
+            padding-right: var(--space-md);
+          }
+
+          @media ${device.mobileL} {
+            padding-top: var(--space-xl);
+            padding-bottom: var(--space-xl);
+            padding-left: var(--space-sm);
+            padding-right: var(--space-sm);
+          }
         `}
       >
         <UICore.Flex justify="center" direction="column">
@@ -159,79 +221,12 @@ export default function DynamicForm({ live, id = null, ...props }) {
             </UICore.Text>
           ) : null}
         </UICore.Flex>
-      </FormBody>
+      </div>
       <FormFooter
         body_background={body_background}
         body_foreground={body_foreground}
         controls_background={controls_background}
       />
-    </StyledForm>
+    </form>
   );
 }
-
-const size = {
-  mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
-  tabletS: "475px",
-  tablet: "768px",
-  laptop: "1024px",
-  laptopL: "1440px",
-  desktop: "2560px",
-};
-
-const device = {
-  mobileS: `(max-width: ${size.mobileS})`,
-  mobileM: `(max-width: ${size.mobileM})`,
-  mobileL: `(max-width: ${size.mobileL})`,
-  tabletS: `(max-width: ${size.tabletS})`,
-  tablet: `(max-width: ${size.tablet})`,
-  laptop: `(max-width: ${size.laptop})`,
-  laptopL: `(max-width: ${size.laptopL})`,
-  desktop: `(max-width: ${size.desktop})`,
-  desktopL: `(max-width: ${size.desktop})`,
-};
-
-const StyledForm = styled.form`
-  max-width: 800px;
-  width: 800px;
-  border-radius: 4px;
-  box-shadow: rgb(0 0 0 / 8%) 0px 0px 0px 2px;
-`;
-
-const FormBody = styled.div`
-  @media ${device.desktopL} {
-    padding-top: var(--space-xxl);
-    padding-bottom: var(--space-xxl);
-    padding-left: var(--space-xxl);
-    padding-right: var(--space-xxl);
-  }
-
-  @media ${device.desktop} {
-    padding-top: var(--space-xxl);
-    padding-bottom: var(--space-xxl);
-    padding-left: var(--space-xl);
-    padding-right: var(--space-xl);
-  }
-
-  @media ${device.laptop} {
-    padding-top: var(--space-xxl);
-    padding-bottom: var(--space-xxl);
-    padding-left: var(--space-lg);
-    padding-right: var(--space-lg);
-  }
-
-  @media ${device.tablet} {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-xl);
-    padding-left: var(--space-md);
-    padding-right: var(--space-md);
-  }
-
-  @media ${device.mobileL} {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-xl);
-    padding-left: var(--space-sm);
-    padding-right: var(--space-sm);
-  }
-`;

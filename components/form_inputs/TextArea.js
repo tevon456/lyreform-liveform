@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Label from "../form_controls/Label";
 import chroma from "chroma-js";
-import { FormControls } from "..";
+import { FormControls } from "../form_controls";
 import { UICore } from "..";
 import { globals } from "./globals";
 

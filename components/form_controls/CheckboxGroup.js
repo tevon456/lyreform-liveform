@@ -1,5 +1,5 @@
 import React from "react";
-import { FormControls } from "..";
+import { Label, Checkbox } from ".";
 import { UICore } from "..";
 import "styled-components/macro";
 
@@ -7,7 +7,7 @@ const CheckboxGroup = ({ options, ...rest }) => {
   return (
     <div>
       <UICore.Flex align="center" className="form-group">
-        <FormControls.Label
+        <Label
           as="span"
           css={`
             display: initial;
@@ -15,7 +15,7 @@ const CheckboxGroup = ({ options, ...rest }) => {
           `}
         >
           {rest.label}
-        </FormControls.Label>
+        </Label>
         <UICore.Space amount="2" />
         {rest?.required ? (
           <>
@@ -42,7 +42,7 @@ const CheckboxGroup = ({ options, ...rest }) => {
         </UICore.Badge>
       </UICore.Flex>
       {options.map((items) => (
-        <FormControls.Checkbox
+        <Checkbox
           key={Math.random()}
           parentLabel={rest.label}
           {...rest}

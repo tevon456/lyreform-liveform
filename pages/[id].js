@@ -19,8 +19,7 @@ export default function Form() {
   const { query } = useRouter();
   const { data, error } = useSWR(
     () =>
-      query.id &&
-      `https://lyreform-api.herokuapp.com/v1/form/public/${query.id}`,
+      query.id && `${process.env.NEXT_PUBLIC_API_URL}/form/public/${query.id}`,
     fetcher
   );
 

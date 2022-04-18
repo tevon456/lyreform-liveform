@@ -16,12 +16,14 @@ export default function handleSubmit(event, callback, error) {
     errorTextClass: "text-help",
   };
   let form = document.querySelector("form", defaultConfig);
-  let validator = new pristine(form);
+
+  let Pristine = new pristine(form);
+
   let data = FormHelper.formResponseToObject(form.elements);
 
-  if (validator.validate()) {
+  if (Pristine.validate()) {
     callback(data);
   } else {
-    error(validator.getErrors());
+    error(Pristine.getErrors());
   }
 }

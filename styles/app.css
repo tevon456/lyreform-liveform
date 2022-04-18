@@ -57,12 +57,12 @@ a:visited {
   visibility: hidden !important;
 }
 
-.has-danger > div .error-badge {
+.has-danger > .error-badge {
   visibility: visible !important;
 }
 
-.has-success > div .error-badge {
-  visibility: hidden !important;
+.has-danger > div .error-badge {
+  visibility: visible !important;
 }
 
 .grecaptcha-badge {

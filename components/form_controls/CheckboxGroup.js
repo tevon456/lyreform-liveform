@@ -43,7 +43,7 @@ const CheckboxGroup = ({ options, ...rest }) => {
       </UICore.Flex>
       {options.map((items, index) => (
         <Checkbox
-          key={Math.random()}
+          key={items.value}
           parentLabel={rest.label}
           {...rest}
           {...items}

@@ -6,11 +6,7 @@ import DynamicForm from "../components/dynamic_form";
 export default function Preview() {
   let [preview, setPreview] = useState(null);
 
-  let allowedOrigins = [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "https://app.lyreform.com",
-  ];
+  let allowedOrigins = ["http://localhost:3001", "https://app.lyreform.com"];
 
   useEffect(() => {
     window?.addEventListener(
@@ -19,8 +15,8 @@ export default function Preview() {
         if (!allowedOrigins.includes(event.origin)) {
           return;
         }
-        setPreview(JSON.parse(event.data));
-        console.log(event.data);
+        let data = JSON.parse(event.data);
+        setPreview(data);
       },
       false
     );

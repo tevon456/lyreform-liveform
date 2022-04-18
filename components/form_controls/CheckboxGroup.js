@@ -5,8 +5,8 @@ import "styled-components/macro";
 
 const CheckboxGroup = ({ options, ...rest }) => {
   return (
-    <div>
-      <UICore.Flex align="center" className="form-group">
+    <div className="form-group">
+      <UICore.Flex align="center">
         <Label
           as="span"
           css={`
@@ -41,12 +41,14 @@ const CheckboxGroup = ({ options, ...rest }) => {
           Error
         </UICore.Badge>
       </UICore.Flex>
-      {options.map((items) => (
+      {options.map((items, index) => (
         <Checkbox
           key={Math.random()}
           parentLabel={rest.label}
           {...rest}
           {...items}
+          id={`${rest.id}-${index}`}
+          data-pristine-required-message="Please check one or more of the following options below:"
         />
       ))}
     </div>

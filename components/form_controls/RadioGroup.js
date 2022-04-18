@@ -5,8 +5,8 @@ import "styled-components/macro";
 
 const RadioGroup = ({ options, ...rest }) => {
   return (
-    <div>
-      <UICore.Flex align="center" className="form-group">
+    <div className="form-group">
+      <UICore.Flex align="center">
         <Label
           as="span"
           css={`
@@ -41,13 +41,15 @@ const RadioGroup = ({ options, ...rest }) => {
         </UICore.Badge>
       </UICore.Flex>
       <div>
-        {options.map((items) => (
+        {options.map((items, index) => (
           <Radio
-            key={Math.random()}
+            key={items.value}
             parentLabel={rest.label}
             required={rest?.required}
             {...rest}
             {...items}
+            id={`${rest.id}-${index}`}
+            data-pristine-required-message="Please check one of the following options below:"
           />
         ))}
       </div>

@@ -15,6 +15,7 @@ const StyledSelect = styled.select`
   width: ${(props) => props.width || "calc(100% - calc(4px * 0))"};
   padding: 8px 6px;
   min-width: 150px;
+  min-height: 1.2em;
   margin-block-start: 0.5em;
   border-radius: ${globals.borderRadius};
   border: 0.15em solid

@@ -15,6 +15,7 @@ const StyledInput = styled.input`
   width: ${(props) => props.width || "calc(100% - calc(8px * 2))"};
   padding: 8px 6px;
   min-width: 150px;
+  min-height: 1.2em;
   margin-block-start: 0.5em;
   border-radius: ${globals.borderRadius};
   box-shadow: ${globals.shadow};
@@ -66,12 +67,7 @@ const Input = ({ label, field_type, ...props }) => {
         </UICore.Badge>
       </UICore.Flex>
 
-      <StyledInput
-        {...props}
-        style={{ minHeight: "1.2em" }}
-        data-label={label}
-        data-field_type={field_type}
-      />
+      <StyledInput {...props} data-label={label} data-field_type={field_type} />
     </Label>
   );
 };

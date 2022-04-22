@@ -14,7 +14,11 @@ function FormFooter({ body_background, controls_background }) {
       `}
     >
       <UICore.Flex justify="center" align="center">
-        <a href="lyreform.com" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://lyreform.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <UICore.Flex align="center">
             <UICore.Text
               size="sm"

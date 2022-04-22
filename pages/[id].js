@@ -23,6 +23,8 @@ export default function Form() {
     fetcher
   );
 
+  console.log(`URL: `, process.env.NEXT_PUBLIC_API_URL);
+
   if (error)
     return (
       <UICore.Page>

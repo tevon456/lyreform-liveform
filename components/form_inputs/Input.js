@@ -17,6 +17,7 @@ const StyledInput = styled.input`
   min-width: 150px;
   min-height: 1.2em;
   margin-block-start: 0.5em;
+  color: var(--text-dark);
   border-radius: ${globals.borderRadius};
   box-shadow: ${globals.shadow};
   border: 0.15em solid

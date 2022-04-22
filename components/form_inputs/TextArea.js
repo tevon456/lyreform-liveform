@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Label from "../form_controls/Label";
 import chroma from "chroma-js";
-import { FormControls } from "../form_controls";
 import { UICore } from "..";
 import { globals } from "./globals";
 
@@ -40,14 +39,14 @@ const TextArea = ({ label, ...props }) => {
   return (
     <Label className="form-group">
       <UICore.Flex align="center">
-        <FormControls.Label
+        <Label
           as="span"
           css={`
             display: initial;
           `}
         >
           {label}
-        </FormControls.Label>
+        </Label>
         <UICore.Space amount="2" />
         {props.required ? (
           <>

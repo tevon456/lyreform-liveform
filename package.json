@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sentry/nextjs": "^6.19.6",
+    "caniuse-lite": "^1.0.30001332",
     "chroma-js": "^2.1.2",
     "next": "12.0.2",
     "pristinejs": "^0.1.9",
@@ -20,9 +21,9 @@
     "swr": "^1.0.1"
   },
   "devDependencies": {
-    "eslint": "7.32.0",
-    "babel-plugin-styled-components": "latest",
     "babel-plugin-macros": "^2.7.0",
+    "babel-plugin-styled-components": "latest",
+    "eslint": "7.32.0",
     "eslint-config-next": "12.0.2"
   }
 }

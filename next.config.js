@@ -10,6 +10,10 @@ const moduleExports = {
   images: {
     domains: ["avatars.slack-edge.com", "dummyimage.com"],
   },
+  sentry: {
+    disableServerWebpackPlugin: true,
+    disableClientWebpackPlugin: true,
+  },
 };
 
 const sentryWebpackPluginOptions = {
@@ -20,6 +24,7 @@ const sentryWebpackPluginOptions = {
   //   urlPrefix, include, ignore
 
   silent: true, // Suppresses all logs
+  token: process.env.NEXT_PUBLIC_SENTRY_AUTH_TOKEN,
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options.
 };

@@ -49,6 +49,7 @@ const RenderFields = (
       return (
         <FormInputs.Input
           type="date"
+          style={{ minHeight: "38px" }}
           body_background={body_background}
           {...field}
         />

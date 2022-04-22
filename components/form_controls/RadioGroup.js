@@ -48,7 +48,7 @@ const RadioGroup = ({ options, ...rest }) => {
             required={rest?.required}
             {...rest}
             {...items}
-            id={`${rest.id}-${index}`}
+            id={`${rest.id}-radio-${index}`}
             data-pristine-required-message="Please check one of the following options below:"
           />
         ))}

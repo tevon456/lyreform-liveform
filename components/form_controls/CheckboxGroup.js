@@ -47,7 +47,7 @@ const CheckboxGroup = ({ options, ...rest }) => {
           parentLabel={rest.label}
           {...rest}
           {...items}
-          id={`${rest.id}-${index}`}
+          id={`${rest.id}-checkbox-${index}`}
           data-pristine-required-message="Please check one or more of the following options below:"
         />
       ))}

@@ -66,7 +66,12 @@ const Input = ({ label, field_type, ...props }) => {
         </UICore.Badge>
       </UICore.Flex>
 
-      <StyledInput {...props} data-label={label} data-field_type={field_type} />
+      <StyledInput
+        {...props}
+        style={{ minHeight: "1.2em" }}
+        data-label={label}
+        data-field_type={field_type}
+      />
     </Label>
   );
 };

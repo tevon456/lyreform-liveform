@@ -18,6 +18,8 @@ const StyledSelect = styled.select`
   min-height: 1.2em;
   margin-block-start: 0.5em;
   color: var(--text-dark);
+  -webkit-appearance: menulist-button !important;
+  line-height: 24px !important;
   border-radius: ${globals.borderRadius};
   border: 0.15em solid
     ${(props) =>
